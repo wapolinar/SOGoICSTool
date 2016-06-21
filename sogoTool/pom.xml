@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>de.apolinarski.tool</groupId>
+	<artifactId>sogo</artifactId>
+	<packaging>jar</packaging>
+	<name>SOGo ICS Tool</name>
+	<version>1.0</version>
+	<description>Tool to reload ICS web calendars from SOGo.</description>
+	<dependencies>
+		<dependency>
+		<groupId>org.mariadb.jdbc</groupId>
+		<artifactId>mariadb-java-client</artifactId>
+		<version>1.3.7</version>
+		</dependency>
+	</dependencies>
+	<properties>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+	</properties>
+	<build>
+	  <plugins>
+	    <plugin>
+	      <artifactId>maven-assembly-plugin</artifactId>
+	      <configuration>
+	        <descriptorRefs>
+	          <descriptorRef>jar-with-dependencies</descriptorRef>
+	        </descriptorRefs>
+	        <archive>
+	          <manifest>
+	            <mainClass>de.apolinarski.tool.sogo.Main</mainClass>
+	          </manifest>
+	        </archive>
+	      </configuration>
+	      <executions>
+	        <execution>
+	          <phase>package</phase>
+	          <goals>
+	            <goal>single</goal>
+	          </goals>
+	        </execution>
+	      </executions>
+	    </plugin>
+	  </plugins>
+	</build>
+</project>

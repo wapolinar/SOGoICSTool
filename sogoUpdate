@@ -1,0 +1,3 @@
+#!/bin/sh
+
+java -jar sogo-1.0-jar-with-dependencies.jar --db_name sogo --db_user sogoUpdate --db_password myPassword
